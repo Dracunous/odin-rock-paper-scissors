@@ -58,12 +58,13 @@ const score=()=>{
 }
 const getScore=score();
 let round=0;
-const scr=getScore.bothObj();
+
 
 const playRound=(humanChoice)=>{
+    const scr=getScore.bothObj();
 
     if(round>=5){
-        if(scr.humanScore>scr.computeScore){
+        if(scr.humanScore>scr.comp){
             message.textContent="Yeayy You won!!";
             computerCard.style.display = "none";
             winnerCard.style.display = "none";
@@ -71,7 +72,7 @@ const playRound=(humanChoice)=>{
 
             resultCard.style.display="block";
         }
-        else if(scr.humanScore===scr.computeScore){
+        else if(scr.humanScore===scr.comp){
             message.textContent="Its a Draw"
             resultCard.style.display="block";
 
@@ -105,7 +106,7 @@ const playRound=(humanChoice)=>{
     choiceCard.style.display = "none";
     winnerCard.style.display = "block";
     choiceCard.style.display="block";
-    winnerCard.style.display = "none";
+    
     computerCard.style.display="none";
      
     
